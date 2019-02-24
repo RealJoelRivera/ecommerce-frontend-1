@@ -3,8 +3,9 @@ import "./App.css";
 import { connect } from "react-redux";
 import { fetchClothes } from "./Redux/ClothesAction";
 import { Switch, Route, withRouter } from "react-router-dom";
-import ClothesContainer from "./Containers/ClothesContainer";
+import CategoryContainer from "./Containers/CategoryContainer";
 import NavBarContainer from "./Containers/NavBarContainer";
+import ClothesContainer from "./Containers/ClothesContainer";
 
 class App extends Component {
   componentDidMount() {
@@ -16,9 +17,12 @@ class App extends Component {
       <div className="App">
         <NavBarContainer />
         <Switch>
-          <Route path="/cart" render={() => <p>Test</p>} />
-
-          <Route path="/" exact render={() => <ClothesContainer />} />
+          <Route path="/cart" render={() => <p>Cart</p>} />
+          <Route
+            path="/category/:id"
+            render={routerProps => <ClothesContainer {...routerProps} />}
+          />
+          <Route path="/" exact render={() => <CategoryContainer />} />
         </Switch>
       </div>
     );

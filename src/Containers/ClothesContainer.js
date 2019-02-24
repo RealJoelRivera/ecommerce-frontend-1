@@ -1,24 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import Category from "../Components/Category";
+import Product from "../Components/Product";
 
-const ClothesContainer = props => {
-  console.log(props);
-  return (
-    <div className="clothesContainer">
-      <p>Clothes Container</p>
-      {props.clotheCategories.map(category => (
-        <Category key={category.id} category={category} />
-      ))}
-    </div>
-  );
-};
+class ClothesContainer extends Component {
+  render() {
+    console.log(this.props.clothingCategory.products);
+    const products = this.props.clothingCategory.products.map(product => (
+      <Product product={product} key={product.id} />
+    ));
+    return (
+      <div>
+        <p>{this.props.clothingCategory.name}</p>
+        <div>{products}</div>
+      </div>
+    );
+  }
+}
 
-// clothes are coming from index.js inside of the combineReducers function because I named it that
-const mapStateToProps = ({ clothes }) => {
-  // clotheCategories is the key that I made up right here on the spot and I access this via the props - for ex: props.clotheCategories
-  // clothes.categories is coming from the clothesReducer as state. .categories is a key.
-  return { clotheCategories: clothes.categories };
+const mapStateToProps = (state, ownProps) => {
+  const clothingCategory = state.clothes.categories.find(
+    category => category.id === parseInt(ownProps.match.params.id)
+  ) || { products: [] };
+
+  return { clothingCategory };
 };
 
 export default connect(mapStateToProps)(ClothesContainer);

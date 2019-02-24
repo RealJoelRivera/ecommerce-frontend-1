@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
 import { fetchClothes } from "./Redux/ClothesAction";
+import { Switch, Route, withRouter } from "react-router-dom";
+import ClothesContainer from "./Containers/ClothesContainer";
+import NavBarContainer from "./Containers/NavBarContainer";
 
 class App extends Component {
   componentDidMount() {
@@ -9,10 +12,14 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="App">
-        <p>Hello</p>
+        <NavBarContainer />
+        <Switch>
+          <Route path="/cart" render={() => <p>Test</p>} />
+
+          <Route path="/" exact render={() => <ClothesContainer />} />
+        </Switch>
       </div>
     );
   }
@@ -22,7 +29,9 @@ const mapStateToProps = ({ clothes }) => {
   return { clothes: clothes.categories };
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchClothes } //mapDispatchToProps
-)(App);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { fetchClothes } //mapDispatchToProps
+  )(App)
+);

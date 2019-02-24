@@ -9,6 +9,8 @@ import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
+import { BrowserRouter } from "react-router-dom";
+
 // reducers specific to my app
 import clothesReducer from "./Redux/ClothesReducer";
 
@@ -18,7 +20,9 @@ const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );

@@ -7,6 +7,7 @@ class CartItem extends Component {
     return (
       <div>
         <p>{this.props.item.name}</p>
+        <p>{this.props.item.quantity}</p>
         <button onClick={() => this.props.removeFromCart(this.props.item)}>
           Remove {this.props.item.name}
         </button>

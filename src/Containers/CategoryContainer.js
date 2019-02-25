@@ -4,8 +4,9 @@ import Category from "../Components/Category";
 
 const CategoryContainer = props => {
   return (
-    <div className="CategoryContainer">
+    <div className="categoryContainer">
       <p>Category Container</p>
+
       {props.clotheCategories.map(category => (
         <Category key={category.id} category={category} />
       ))}

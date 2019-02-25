@@ -2,13 +2,13 @@
   text-align: center;
 }
 
-.categories {
+.category,
+.product {
   border: 1px solid;
   border-color: red;
   padding: 1%;
   margin: 1%;
 }
-
 .navBar {
   border: 1px solid;
   border-color: blue;
@@ -16,7 +16,9 @@
   margin: 1%;
 }
 
-.clothesContainer {
+.clothesContainer,
+.categoryContainer,
+.itemDisplayContainer {
   border: 1px solid;
   border-color: green;
   padding: 1%;

@@ -4,12 +4,16 @@ import Product from "../Components/Product";
 
 class ClothesContainer extends Component {
   render() {
-    console.log(this.props.clothingCategory.products);
     const products = this.props.clothingCategory.products.map(product => (
-      <Product product={product} key={product.id} />
+      <Product
+        product={product}
+        key={product.id}
+        clothingCategoryId={this.props.clothingCategory.id}
+      />
     ));
+
     return (
-      <div>
+      <div className="clothesContainer">
         <p>{this.props.clothingCategory.name}</p>
         <div>{products}</div>
       </div>
@@ -18,8 +22,9 @@ class ClothesContainer extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  let urlID = ownProps.match.params.id;
   const clothingCategory = state.clothes.categories.find(
-    category => category.id === parseInt(ownProps.match.params.id)
+    category => category.id === parseInt(urlID)
   ) || { products: [] };
 
   return { clothingCategory };

@@ -1,14 +1,20 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Product extends Component {
   render() {
-    console.log(this.props);
     return (
-      <div>
-        <h2>{this.props.product.name}</h2>
-        <h6>{this.props.product.description}</h6>
-        <h4>{this.props.product.price}</h4>
-      </div>
+      <Link
+        to={`/category/${this.props.clothingCategoryId}/clothes/${
+          this.props.product.id
+        }`}
+      >
+        <div className="product">
+          <h2>{this.props.product.name}</h2>
+          <h6>{this.props.product.description}</h6>
+          <h4>{this.props.product.price}</h4>
+        </div>
+      </Link>
     );
   }
 }

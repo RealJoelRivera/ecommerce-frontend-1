@@ -8,6 +8,7 @@ import NavBarContainer from "./Containers/NavBarContainer";
 import ClothesContainer from "./Containers/ClothesContainer";
 import ItemDisplayContainer from "./Containers/ItemDisplayContainer";
 import Cart from "./Containers/CartContainer";
+import LogIn from "./Components/LogIn";
 
 class App extends Component {
   componentDidMount() {
@@ -20,6 +21,10 @@ class App extends Component {
         <NavBarContainer />
 
         <Switch>
+          <Route
+            path="/login"
+            render={routerProps => <LogIn {...routerProps} />}
+          />
           <Route
             path="/category/:category_id/clothes/:product_id"
             render={routerProps => <ItemDisplayContainer {...routerProps} />}

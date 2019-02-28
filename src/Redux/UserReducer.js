@@ -1,6 +1,7 @@
 const initialState = {
   cart: [],
-  purchases: []
+  purchases: [],
+  user: {}
 };
 
 const userReducer = (state = initialState, action) => {
@@ -57,6 +58,9 @@ const userReducer = (state = initialState, action) => {
 
         return { ...state, cart: removedArray };
       }
+
+    case "ADD_USER":
+      return { ...state, user: action.payload };
 
     default:
       return state;

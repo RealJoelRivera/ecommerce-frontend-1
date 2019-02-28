@@ -7,6 +7,7 @@ const CategoryContainer = props => {
     <div className="categoryContainer">
       <p>Category Container</p>
 
+      {/* For each category, render out a card */}
       {props.clotheCategories.map(category => (
         <Category key={category.id} category={category} />
       ))}

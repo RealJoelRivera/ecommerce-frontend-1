@@ -21,21 +21,15 @@ class App extends Component {
         <NavBarContainer />
 
         <Switch>
-          <Route
-            path="/login"
-            render={routerProps => <LogIn {...routerProps} />}
-          />
+          <Route path="/login" component={LogIn} />
+          <Route path="/signup" component={LogIn} />
           <Route
             path="/category/:category_id/clothes/:product_id"
-            render={routerProps => <ItemDisplayContainer {...routerProps} />}
+            component={ItemDisplayContainer}
           />
-          <Route path="/cart" render={() => <Cart />} />
-          <Route
-            path="/category/:id"
-            exact
-            render={routerProps => <ClothesContainer {...routerProps} />}
-          />
-          <Route path="/" exact render={() => <CategoryContainer />} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/category/:id" exact component={ClothesContainer} />
+          <Route path="/" exact component={CategoryContainer} />
         </Switch>
       </div>
     );

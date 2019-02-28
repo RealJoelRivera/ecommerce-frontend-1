@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { userLogIn } from "../Redux/UserAction";
+import { userLogIn, userSignUp } from "../Redux/UserAction";
 
 class LogIn extends Component {
   state = {
@@ -8,6 +8,8 @@ class LogIn extends Component {
     email: "",
     password: ""
   };
+
+  isLogIn = () => this.props.match.path === "/login";
 
   handleChange = e => {
     this.setState({
@@ -22,21 +24,27 @@ class LogIn extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    this.props.userLogIn(user);
+    if (this.isLogIn()) {
+      this.props.userLogIn(user);
+    } else {
+      this.props.userSignUp(user);
+    }
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.state, this.props);
     return (
       <form onSubmit={this.handleSubmit}>
-        <h3>LogIn</h3>
-        <input
-          onChange={this.handleChange}
-          type="text"
-          placeholder="Full Name"
-          value={this.state.user}
-          name="name"
-        />
+        <h3>{this.isLogIn() ? "Log In" : "Sign Up"}</h3>
+        {this.isLogIn() ? null : (
+          <input
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Full Name"
+            value={this.state.user}
+            name="name"
+          />
+        )}
         <br />
         <input
           onChange={this.handleChange}
@@ -62,5 +70,5 @@ class LogIn extends Component {
 
 export default connect(
   null,
-  { userLogIn }
+  { userLogIn, userSignUp }
 )(LogIn);

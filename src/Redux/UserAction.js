@@ -25,3 +25,22 @@ export const userLogIn = user => {
       });
   };
 };
+
+export const userSignUp = user => {
+  console.log(user);
+  return dispatch => {
+    fetch("http://localhost:3000/api/v1/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(user)
+    })
+      .then(r => r.json())
+      .then(object => {
+        console.log(object);
+        localStorage.setItem("jwt", object.jwt);
+        dispatch({ type: "ADD_USER", payload: object.user });
+      });
+  };
+};

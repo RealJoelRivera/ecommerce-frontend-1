@@ -7,12 +7,21 @@ const NavBar = () => {
       <Link to="/">
         <h1>Fashion Fits</h1>
       </Link>
-      <p>Shop</p>
-      <p>Collection</p>
-      <Link to="/login">LogIn</Link>
-      <br />
-      <br />
-      <Link to="/cart">Cart</Link>
+      <Link to="/">
+        <p>Shop</p>
+      </Link>
+      <Link to="/">
+        <p>Collection</p>
+      </Link>
+      <Link to="/login">
+        <p>LogIn</p>
+      </Link>
+      <Link to="/signup">
+        <p>Sign Up</p>
+      </Link>
+      <Link to="/cart">
+        <p>Cart</p>
+      </Link>
     </div>
   );
 };

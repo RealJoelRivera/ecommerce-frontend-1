@@ -7,7 +7,6 @@ export const removeFromCart = item => {
 };
 
 export const userLogIn = user => {
-  console.log(user);
   return dispatch => {
     fetch("http://localhost:3000/api/v1/login", {
       method: "POST",
@@ -18,8 +17,6 @@ export const userLogIn = user => {
     })
       .then(r => r.json())
       .then(object => {
-        console.log(object);
-        console.log(object.jwt);
         localStorage.setItem("jwt", object.jwt);
         dispatch({ type: "ADD_USER", payload: object.user });
       });
@@ -27,7 +24,6 @@ export const userLogIn = user => {
 };
 
 export const userSignUp = user => {
-  console.log(user);
   return dispatch => {
     fetch("http://localhost:3000/api/v1/signup", {
       method: "POST",
@@ -38,7 +34,6 @@ export const userSignUp = user => {
     })
       .then(r => r.json())
       .then(object => {
-        console.log(object);
         localStorage.setItem("jwt", object.jwt);
         dispatch({ type: "ADD_USER", payload: object.user });
       });

@@ -32,7 +32,6 @@ class LogIn extends Component {
   };
 
   render() {
-    console.log(this.state, this.props);
     return (
       <form onSubmit={this.handleSubmit}>
         <h3>{this.isLogIn() ? "Log In" : "Sign Up"}</h3>

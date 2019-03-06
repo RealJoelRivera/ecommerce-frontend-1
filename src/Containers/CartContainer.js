@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "../Components/CartItem";
+import { clearCart } from "../Redux/UserAction";
 
 class Cart extends Component {
   render() {
@@ -12,18 +13,23 @@ class Cart extends Component {
       <div>
         <h1>Cart</h1>
         {cartItems}
-        <Link to="/">
-          <button>One Click Checkout</button>
-        </Link>
+        {/* <Link to="/"> */}
+        <button onClick={() => this.props.clearCart(this.props.items)}>
+          One Click Checkout
+        </button>
+        {/* </Link> */}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
+  console.log(state.user);
   const items = state.user.cart;
-  console.log(items);
   return { items };
 };
 
-export default connect(mapStateToProps)(Cart);
+export default connect(
+  mapStateToProps,
+  { clearCart }
+)(Cart);

@@ -39,3 +39,19 @@ export const userSignUp = user => {
       });
   };
 };
+
+export const clearCart = items => {
+  return dispatch => {
+    console.log(items);
+    fetch("http://localhost:3000/api/v1/carts", {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("jwt"),
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ cartItems: items })
+    })
+      .then(r => r.json())
+      .then(console.log);
+  };
+};

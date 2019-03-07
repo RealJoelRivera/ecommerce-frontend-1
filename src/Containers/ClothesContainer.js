@@ -15,7 +15,7 @@ class ClothesContainer extends Component {
     return (
       <div className="clothesContainer">
         <p>{this.props.clothingCategory.name}</p>
-        <div>{products}</div>
+        {products}
       </div>
     );
   }

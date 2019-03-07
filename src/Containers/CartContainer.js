@@ -14,7 +14,10 @@ class Cart extends Component {
         <h1>Cart</h1>
         {cartItems}
         {/* <Link to="/"> */}
-        <button onClick={() => this.props.clearCart(this.props.items)}>
+        <button
+          id="checkout"
+          onClick={() => this.props.clearCart(this.props.items)}
+        >
           One Click Checkout
         </button>
         {/* </Link> */}

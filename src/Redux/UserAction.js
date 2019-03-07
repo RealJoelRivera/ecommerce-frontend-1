@@ -17,8 +17,13 @@ export const userLogIn = user => {
     })
       .then(r => r.json())
       .then(object => {
-        localStorage.setItem("jwt", object.jwt);
-        dispatch({ type: "ADD_USER", payload: object.user });
+        if (object.jwt) {
+          localStorage.setItem("jwt", object.jwt);
+          let obj = { ...object.user };
+          delete obj.carts;
+          dispatch({ type: "ADD_PURCHASES", payload: object.carts });
+          dispatch({ type: "ADD_USER", payload: obj });
+        }
       });
   };
 };

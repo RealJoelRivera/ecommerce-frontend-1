@@ -65,6 +65,9 @@ const userReducer = (state = initialState, action) => {
     case "CLEAR_CART":
       return { ...state, cart: [] };
 
+    case "ADD_PURCHASES":
+      return { ...state, purchases: action.payload };
+
     default:
       return state;
   }

@@ -98,7 +98,7 @@ class LogIn extends Component {
                 />
                 {this.isLogIn() ? (
                   <Button
-                    onClick={() => console.log(this.props)}
+                    onClick={this.handleSubmit}
                     color="blue"
                     fluid
                     size="large"
@@ -123,7 +123,7 @@ class LogIn extends Component {
               </span>
             ) : (
               <span>
-                Been with us? <Link to={"/login"}>LogIn</Link>
+                Been with us? <Link to={"/login"}>Log In</Link>
               </span>
             )}
           </Grid.Column>

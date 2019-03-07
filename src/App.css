@@ -20,7 +20,17 @@
   padding-bottom: 100px;
 }
 
+.itemDisplayContainer {
+  display: grid;
+}
+
+.clothesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .clothesContainer p {
+  grid-column: 1/4;
   font-size: 3em;
 }
 
@@ -37,6 +47,7 @@
   background-color: #000;
   border-top: solid 5px #feea34;
   width: 100%;
+  padding: 1rem;
 }
 
 .innerNav a {
@@ -88,11 +99,22 @@
   left: 0;
   top: 0;
   padding: 15px;
-  display: flex;
+  display: grid;
+  grid-template-rows: 2fr repeat(3, 1fr) 2fr;
   align-items: center;
   justify-content: center;
   /* Here we used a transition timing from the graph editor in the developer tools which alloes us to add a bit more character to our transition. */
   transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay > h2 {
+  grid-row: 2/3;
+}
+.overlay > h6 {
+  grid-row: 3/4;
+}
+.overlay > h4 {
+  grid-row: 4/5;
 }
 
 /* categoryCard type of category */
@@ -112,4 +134,29 @@ h6 {
 
 img {
   height: 500px;
+}
+
+.cartItem img {
+  height: 100px;
+}
+
+.buttonItem {
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+#checkout {
+  background-color: green;
+  color: white;
+  margin-top: 1rem;
+}
+
+.footer-data {
+  display: block;
+  padding: 1rem;
+}
+
+.span {
+  font-size: 1rem;
+  color: #feea34;
 }

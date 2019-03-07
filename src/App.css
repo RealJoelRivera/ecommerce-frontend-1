@@ -172,3 +172,42 @@ img {
 .innerNav #signOut:hover {
   cursor: pointer;
 }
+
+.welcome-message {
+  font-size: 2em;
+}
+
+.name-div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.purchase-info {
+  margin-top: 2rem;
+  width: 33%;
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.purchase-info ul {
+  margin-top: 15px;
+}
+
+.purchase-info ul li {
+  padding: 2px;
+}
+
+.itemDisplayContainer div div {
+  align-items: center;
+}
+
+.purchase-price {
+  font-weight: 700;
+}
+
+/* <p className="purchase-price">
+{this.props.purchase.total} You Bought:
+</p> */

@@ -9,9 +9,13 @@ class ProfileContainer extends Component {
   render() {
     return (
       <div className="itemDisplayContainer">
+        <div className="welcome-message">
+          {" "}
+          Welcome back, {this.props.user.name}{" "}
+        </div>
+
         {!!this.props.user.id ? (
-          <div>
-            Welcome back, {this.props.user.name}.
+          <div className="name-div">
             {this.props.purchases.map(purchase => {
               return <Purchase purchase={purchase} />;
             })}

@@ -6,7 +6,17 @@ class Category extends Component {
     return (
       <div className="category">
         <Link to={`/category/${this.props.category.id}`}>
-          <p>{this.props.category.name}</p>
+          <div className="overlay">
+            <h2>{this.props.category.name}</h2>
+          </div>
+          <img
+            alt=""
+            src={
+              this.props.category.products[
+                Math.floor(Math.random() * this.props.category.products.length)
+              ].img
+            }
+          />
         </Link>
       </div>
     );

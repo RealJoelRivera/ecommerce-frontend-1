@@ -1,40 +1,115 @@
 .App {
   text-align: center;
+  font-family: "Playfair Display";
+  font-size: 20px;
+  line-height: 1.3;
+  background-color: #dbcece;
+  color: #000;
+  height: 100%;
+  position: relative;
 }
 
-.category,
-.product {
-  border: 1px solid;
-  border-color: red;
-  padding: 1%;
-  margin: 1%;
-}
-.navBar {
-  border: 1px solid;
-  border-color: blue;
-  padding: 1%;
-  margin: 1%;
-}
-
+/* Main containers */
 .clothesContainer,
 .categoryContainer,
 .itemDisplayContainer {
-  border: 1px solid;
-  border-color: green;
-  padding: 1%;
-  margin: 1%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
+.clothesContainer p {
+  font-size: 3em;
+}
+
+/* categoryCard */
+.category {
+  position: relative;
+  width: 500px;
+  padding: 1%;
+  margin-bottom: 2rem;
+}
+
+/* navBar outer */
+.navBar {
+  background-color: #000;
+  border-top: solid 5px #feea34;
+  width: 100%;
+}
+
+.innerNav a {
+  color: #dbcece;
+}
+
+.footer {
+  background-color: #000;
+  border-top: solid 5px #feea34;
+  width: 100%;
+  padding: 100px;
+  color: #dbcece;
+}
+
+/* navBar inner */
+.innerNav {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* searchBar Component with Title and search form */
 .search {
-  border: 1px solid;
-  border-color: gold;
-  padding: 1%;
-  margin: 1%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.navBarContainer {
-  border: 1px solid;
-  border-color: black;
-  padding: 1%;
-  margin: 1%;
+.hero {
+  background-image: url(./hero.jpg);
+  background-size: cover;
+  height: 400px;
+  background-position: center;
+}
+
+/* categoryCard type of category */
+/* productCard type of category */
+.overlay {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(254, 234, 52, 0.7);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Here we used a transition timing from the graph editor in the developer tools which alloes us to add a bit more character to our transition. */
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* categoryCard type of category */
+/* productCard type of category */
+.overlay h2,
+h4,
+h6 {
+  font-size: 3vw;
+  color: white;
+}
+
+/* categoryCard type of category */
+/* productCard type of category */
+.category:hover .overlay {
+  opacity: 1;
+}
+
+img {
+  height: 500px;
 }

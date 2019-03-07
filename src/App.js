@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./base.css";
 import { connect } from "react-redux";
 import { fetchClothes } from "./Redux/ClothesAction";
 import { Switch, Route, withRouter } from "react-router-dom";
@@ -9,6 +10,7 @@ import ClothesContainer from "./Containers/ClothesContainer";
 import ItemDisplayContainer from "./Containers/ItemDisplayContainer";
 import Cart from "./Containers/CartContainer";
 import LogIn from "./Components/LogIn";
+import Footer from "./Components/Footer";
 
 class App extends Component {
   componentDidMount() {
@@ -31,6 +33,8 @@ class App extends Component {
           <Route path="/category/:id" exact component={ClothesContainer} />
           <Route path="/" exact component={CategoryContainer} />
         </Switch>
+
+        <Footer />
       </div>
     );
   }

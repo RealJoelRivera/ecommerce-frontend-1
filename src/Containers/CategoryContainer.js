@@ -5,8 +5,6 @@ import Category from "../Components/Category";
 const CategoryContainer = props => {
   return (
     <div className="categoryContainer">
-      <p>Category Container</p>
-
       {/* For each category, render out a card */}
       {props.clotheCategories.map(category => (
         <Category key={category.id} category={category} />

@@ -2,9 +2,12 @@ import React from "react";
 
 const Search = () => {
   return (
-    <div className="search">
-      LOGO GOES HERE
-      <input type="text" />
+    <div>
+      <div className="search">
+        <h2>FASHION FITS</h2>
+        <input type="text" placeholder="Search" />
+      </div>
+      <div className="hero" />
     </div>
   );
 };

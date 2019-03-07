@@ -52,6 +52,8 @@ export const clearCart = items => {
       body: JSON.stringify({ cartItems: items })
     })
       .then(r => r.json())
-      .then(console.log);
+      .then(cart => {
+        dispatch({ type: "CLEAR_CART", payload: null });
+      });
   };
 };

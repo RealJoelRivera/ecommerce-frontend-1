@@ -97,11 +97,21 @@ class LogIn extends Component {
                   name="password"
                 />
                 {this.isLogIn() ? (
-                  <Button color="blue" fluid size="large">
+                  <Button
+                    onClick={() => console.log(this.props)}
+                    color="blue"
+                    fluid
+                    size="large"
+                  >
                     Login
                   </Button>
                 ) : (
-                  <Button color="blue" fluid size="large">
+                  <Button
+                    onClick={() => console.log("test")}
+                    color="blue"
+                    fluid
+                    size="large"
+                  >
                     Sign Up
                   </Button>
                 )}
@@ -113,7 +123,7 @@ class LogIn extends Component {
               </span>
             ) : (
               <span>
-                Been with us? <Link to={"/signup"}>LogIn</Link>
+                Been with us? <Link to={"/login"}>LogIn</Link>
               </span>
             )}
           </Grid.Column>

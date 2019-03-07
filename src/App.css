@@ -164,3 +164,11 @@ img {
 .cart {
   min-height: 25rem;
 }
+
+.innerNav #signOut {
+  color: #dbcece;
+}
+
+.innerNav #signOut:hover {
+  cursor: pointer;
+}

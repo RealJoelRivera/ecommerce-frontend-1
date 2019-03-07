@@ -11,6 +11,7 @@ import ItemDisplayContainer from "./Containers/ItemDisplayContainer";
 import Cart from "./Containers/CartContainer";
 import LogIn from "./Components/LogIn";
 import Footer from "./Components/Footer";
+import ProfileContainer from "./Containers/ProfileContainer";
 
 class App extends Component {
   componentDidMount() {
@@ -30,6 +31,8 @@ class App extends Component {
             component={ItemDisplayContainer}
           />
           <Route path="/cart" component={Cart} />
+          <Route path="/profile" component={ProfileContainer} />
+
           <Route path="/category/:id" exact component={ClothesContainer} />
           <Route path="/" exact component={CategoryContainer} />
         </Switch>

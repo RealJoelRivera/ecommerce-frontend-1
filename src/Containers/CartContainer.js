@@ -27,7 +27,6 @@ class Cart extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.user);
   const items = state.user.cart;
   return { items };
 };

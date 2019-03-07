@@ -6,6 +6,10 @@ export const removeFromCart = item => {
   return { type: "REMOVE_FROM_CART", payload: item };
 };
 
+export const removeUser = () => {
+  return { type: "REMOVE_USER" };
+};
+
 export const userLogIn = user => {
   return dispatch => {
     fetch("http://localhost:3000/api/v1/login", {
@@ -47,7 +51,6 @@ export const userSignUp = user => {
 
 export const clearCart = items => {
   return dispatch => {
-    console.log(items);
     fetch("http://localhost:3000/api/v1/carts", {
       method: "POST",
       headers: {

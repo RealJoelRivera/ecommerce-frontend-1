@@ -11,9 +11,9 @@ const NavBar = () => {
         <Link to="/">
           <p>Shop</p>
         </Link>
-        <Link to="/login">
+        {/* <Link to="/login">
           <p>LogIn</p>
-        </Link>
+        </Link> */}
         <Link to="/signup">
           <p>Sign Up</p>
         </Link>

@@ -10,7 +10,7 @@ class Cart extends Component {
       <CartItem item={item} key={index} />
     ));
     return (
-      <div>
+      <div class="cart">
         <h1>Cart</h1>
         {cartItems}
         {/* <Link to="/"> */}

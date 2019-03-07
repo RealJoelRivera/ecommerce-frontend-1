@@ -21,7 +21,7 @@ export const userLogIn = user => {
           localStorage.setItem("jwt", object.jwt);
           let obj = { ...object.user };
           delete obj.carts;
-          dispatch({ type: "ADD_PURCHASES", payload: object.carts });
+          dispatch({ type: "ADD_PURCHASES", payload: object.user.carts });
           dispatch({ type: "ADD_USER", payload: obj });
         }
       });

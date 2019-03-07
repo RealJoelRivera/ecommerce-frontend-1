@@ -160,3 +160,7 @@ img {
   font-size: 1rem;
   color: #feea34;
 }
+
+.cart {
+  min-height: 25rem;
+}

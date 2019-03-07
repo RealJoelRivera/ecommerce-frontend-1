@@ -28,8 +28,10 @@ class LogIn extends Component {
     };
     if (this.isLogIn()) {
       this.props.userLogIn(user);
+      this.props.history.push("/");
     } else {
       this.props.userSignUp(user);
+      this.props.history.push("/");
     }
   };
 
@@ -107,7 +109,7 @@ class LogIn extends Component {
                   </Button>
                 ) : (
                   <Button
-                    onClick={() => console.log("test")}
+                    onClick={this.handleSubmit}
                     color="blue"
                     fluid
                     size="large"

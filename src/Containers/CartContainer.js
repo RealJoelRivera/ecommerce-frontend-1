@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CartItem from "../Components/CartItem";
 import { clearCart } from "../Redux/UserAction";
 
@@ -10,7 +10,7 @@ class Cart extends Component {
       <CartItem item={item} key={index} />
     ));
     return (
-      <div class="cart">
+      <div className="cart">
         <h1>Cart</h1>
         {cartItems}
         {/* <Link to="/"> */}

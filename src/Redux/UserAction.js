@@ -63,5 +63,6 @@ export const clearCart = items => {
       .then(cart => {
         dispatch({ type: "CLEAR_CART", payload: null });
       });
+    alert("Your Items Have Been Purchased");
   };
 };

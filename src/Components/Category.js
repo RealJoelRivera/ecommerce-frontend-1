@@ -10,7 +10,7 @@ class Category extends Component {
             <h2>{this.props.category.name}</h2>
           </div>
           <img
-            alt=""
+            alt={this.props.category.name}
             src={
               this.props.category.products[
                 Math.floor(Math.random() * this.props.category.products.length)

@@ -2,11 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import Category from "../Components/Category";
 
-const CategoryContainer = props => {
+const CategoryContainer = ({ clotheCategories }) => {
   return (
     <div className="categoryContainer">
       {/* For each category, render out a card */}
-      {props.clotheCategories.map(category => (
+      {clotheCategories.map(category => (
         <Category key={category.id} category={category} />
       ))}
     </div>

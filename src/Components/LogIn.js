@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
+import { Button, Form, Grid, Header, Segment } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { userLogIn, userSignUp } from "../Redux/UserAction";
 import { Link } from "react-router-dom";
@@ -59,10 +59,10 @@ class LogIn extends Component {
                 Login to your account
               </Header>
             ) : (
-              <Header as="h2" color="blue" textAlign="center">
-                Sign Up for your account
+                <Header as="h2" color="blue" textAlign="center">
+                  Sign Up for your account
               </Header>
-            )}
+              )}
 
             <Form size="large">
               <Segment stacked>
@@ -108,15 +108,15 @@ class LogIn extends Component {
                     Login
                   </Button>
                 ) : (
-                  <Button
-                    onClick={this.handleSubmit}
-                    color="blue"
-                    fluid
-                    size="large"
-                  >
-                    Sign Up
+                    <Button
+                      onClick={this.handleSubmit}
+                      color="blue"
+                      fluid
+                      size="large"
+                    >
+                      Sign Up
                   </Button>
-                )}
+                  )}
               </Segment>
             </Form>
             {this.isLogIn() ? (
@@ -124,10 +124,10 @@ class LogIn extends Component {
                 New to us? <Link to={"/signup"}>Sign Up</Link>
               </span>
             ) : (
-              <span>
-                Been with us? <Link to={"/login"}>Log In</Link>
-              </span>
-            )}
+                <span>
+                  Been with us? <Link to={"/login"}>Log In</Link>
+                </span>
+              )}
           </Grid.Column>
         </Grid>
       </div>

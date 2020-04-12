@@ -4,10 +4,9 @@ import { addToCart } from "../Redux/UserAction";
 
 class ItemDisplayContainer extends Component {
   render() {
-    console.log(this.props.item.img);
     return (
       <div className="itemDisplayContainer">
-        {this.props.item ? <img alt="" src={this.props.item.img} /> : null}
+        {this.props.item ? <img alt={this.props.item.description} src={this.props.item.img} /> : null}
         <h1>{this.props.item.name}</h1>
         <h3>{this.props.item.description}</h3>
         <h3>{this.props.item.price}</h3>

@@ -105,6 +105,7 @@
   justify-content: center;
   /* Here we used a transition timing from the graph editor in the developer tools which alloes us to add a bit more character to our transition. */
   transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10%
 }
 
 .overlay > h2 {
@@ -134,6 +135,7 @@ h6 {
 
 img {
   height: 500px;
+  border-radius: 3%
 }
 
 .cartItem img {

@@ -10,7 +10,7 @@ class CartItem extends Component {
         <p>{this.props.item.name}</p>
         <p>{this.props.item.quantity}</p>
         <button
-          class="buttonItem"
+          className="buttonItem"
           onClick={() => this.props.removeFromCart(this.props.item)}
         >
           Remove {this.props.item.name}
